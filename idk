@@ -1,0 +1,277 @@
+Here is a complete, self-contained HTML file for **The Hallucination Auditor**.
+
+I have designed it as a modern, responsive web page using a "cyber-academic" aesthetic (dark mode with neon/tech accents) that perfectly matches the themes of zero-trust auditing, adversarial engineering, and forensics. It uses embedded CSS, meaning you can save this directly as an `.html` file and open it in any browser without needing external files.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hallucination Auditor</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --surface-color: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-red: #ff7b72;
+            --accent-green: #3fb950;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--accent-blue);
+            margin: 3rem 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2::before {
+            content: ">>";
+            font-family: var(--font-mono);
+            color: var(--accent-red);
+            font-size: 1.2rem;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .stage-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        /* Functions Section */
+        .function-card {
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .function-card:nth-child(even) {
+            border-left-color: var(--accent-red);
+        }
+
+        .mechanism-box {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            border-left: 2px solid var(--text-muted);
+        }
+
+        .mechanism-box strong {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Code/Quote Blocks */
+        code, .prompt-example {
+            font-family: var(--font-mono);
+            background: #000;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-red);
+        }
+
+        .prompt-example {
+            display: block;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: var(--accent-green);
+            border: 1px solid var(--border-color);
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 123, 114, 0.05);
+            border: 1px solid rgba(255, 123, 114, 0.2);
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>The Hallucination Auditor</h1>
+        <p class="subtitle">An inverted pedagogical framework and instructional apparatus designed specifically for the Generative AI era.</p>
+    </header>
+
+    <main>
+        <div class="intro-text">
+            <strong>Core Philosophy:</strong> This framework deliberately weaponizes the flaws of Large Language Models (LLMs)—specifically their tendency to present false information (hallucinations) with absolute syntactical confidence—to train students in critical media consumption, advanced fact-checking, and adversarial prompt engineering. Rather than treating AI as an oracle that provides answers, this framework treats AI as a highly articulate but fundamentally unreliable narrator.
+        </div>
+
+        <section>
+            <h2>1. The Operational Architecture</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">The framework executes through a precisely sequenced four-stage protocol:</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <span class="stage-badge">Stage A</span>
+                    <h3>Controlled Generation (The "Poisoned" Prompt)</h3>
+                    <p>The educator acts as the architect of the exercise by writing a "sabotage prompt." The teacher instructs an LLM to generate an authoritative, highly academic essay on a specific syllabus topic.</p>
+                    <p style="margin-top: 1rem;">However, the prompt mandates the seamless integration of specific, pre-determined errors: chronological anachronisms, invented historical figures, fabricated scientific laws, or logical paradoxes. The resulting artifact is structurally flawless but factually compromised.</p>
+                </div>
+
+                <div class="card">
+                    <span class="stage-badge">Stage B</span>
+                    <h3>Forensic Deconstruction (Zero-Trust Auditing)</h3>
+                    <p>Students are presented with the AI-generated artifact without being told where the errors lie (and sometimes, not even told that errors exist at all).</p>
+                    <p style="margin-top: 1rem;">Operating under a <strong>"zero-trust"</strong> mandate, students must manually dissect the text. They cross-reference the document's claims against verified primary sources, peer-reviewed databases, and textbooks. They physically or digitally annotate the text, highlighting suspicious data and juxtaposing it with verified reality.</p>
+                </div>
+
+                <div class="card">
+                    <span class="stage-badge">Stage C</span>
+                    <h3>Algorithmic Interrogation (AI vs. AI)</h3>
+                    <p>Once students have formed their hypotheses about the errors, they boot up an LLM to assist in the verification process. This requires them to use adversarial prompting. Instead of asking the AI to write something new, they command it to verify its own logic.</p>
+                    <div class="prompt-example">
+                        "You generated a text claiming the touchscreen was invented in 1985 by Dr. Aris Vane. Search academic databases and confirm if this individual exists, or if this is an AI hallucination."
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="stage-badge">Stage D</span>
+                    <h3>The Audit Log Assessment</h3>
+                    <p>The final deliverable is not an essay, but an <strong>Audit Log</strong>. This consists of the student’s heavily annotated, fact-checked document paired with the chat transcript of their algorithmic interrogation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Core Pedagogical & Systemic Functions</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">The Hallucination Auditor serves four distinct educational functions within a modern curriculum:</p>
+
+            <div class="grid-2">
+                <div class="card function-card">
+                    <h3>Cognitive Inoculation against "Automation Bias"</h3>
+                    <div class="mechanism-box">
+                        <strong>Mechanism</strong><br>
+                        Humans naturally equate confident, grammatically perfect articulation with factual accuracy—a vulnerability exploited by AI.
+                    </div>
+                    <p>By repeatedly exposing students to beautifully written lies, the Auditor framework functions as a psychological vaccine. It shatters the illusion of machine infallibility, replacing blind trust with epistemic vigilance. Students learn to separate the style of the delivery from the validity of the data.</p>
+                </div>
+
+                <div class="card function-card">
+                    <h3>Neutralization of AI-Assisted Plagiarism</h3>
+                    <div class="mechanism-box">
+                        <strong>Mechanism</strong><br>
+                        Traditional assignments measure the final written product, which an AI can now instantly generate, leading to an epidemic of academic dishonesty.
+                    </div>
+                    <p>The Auditor shifts the entire assessment matrix from product to process. Because the assignment requires the student to document their hunt for errors and prove their investigative methodology, cheating by having an AI "write the essay" is rendered impossible and irrelevant.</p>
+                </div>
+
+                <div class="card function-card">
+                    <h3>Advanced AI Literacy & Prompt Engineering</h3>
+                    <div class="mechanism-box">
+                        <strong>Mechanism</strong><br>
+                        Most students only know how to use "generative" prompts (e.g., "Write me a summary of...").
+                    </div>
+                    <p>The framework forces students to master "analytical" and "adversarial" prompt engineering. They learn how to constrain an AI, command it to cite specific external databases, and force it to evaluate the logical consistency of conflicting claims. This transitions them from passive AI users to active AI directors.</p>
+                </div>
+
+                <div class="card function-card">
+                    <h3>Deep Subject-Matter Reinforcement</h3>
+                    <div class="mechanism-box">
+                        <strong>Mechanism</strong><br>
+                        Rote memorization often fails to anchor complex concepts into long-term memory.
+                    </div>
+                    <p>To successfully catch a sophisticated lie about a historical event or a biological process, the student must possess a deep, structural understanding of the actual truth. The forensic nature of the task forces active recall and deep cognitive engagement with the syllabus material, disguised as high-stakes detective work.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
+
+```
