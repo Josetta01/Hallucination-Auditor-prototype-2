@@ -1,8 +1,3 @@
-Here is a complete, self-contained HTML file for **The Hallucination Auditor**.
-
-I have designed it as a modern, responsive web page using a "cyber-academic" aesthetic (dark mode with neon/tech accents) that perfectly matches the themes of zero-trust auditing, adversarial engineering, and forensics. It uses embedded CSS, meaning you can save this directly as an `.html` file and open it in any browser without needing external files.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
